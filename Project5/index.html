@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multi Projects</title>
+    <style>
+      * {
+        background-color: wheat;
+      }
+      .container {
+        text-align: center;
+      }
+      .button {
+        margin: 10px;
+        padding: 25px;
+        border: 2px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: larger;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Multi Function Project</h1>
+      <div class="btn">
+        <button class="button" onclick="checkOddEven()">Even or Odd</button>
+        <button class="button" onclick="checkLarger()">Large or Small</button>
+        <button class="button" onclick="calFahrenheit()">Converter</button>
+      </div>
+    </div>
+
+    <script>
+      function checkOddEven(a, b) {
+        a = prompt("Enter a first number");
+        a = parseInt(a);
+        b = prompt(`Enter a second number`);
+        b = parseInt(b);
+        if (a % 2 == 0) {
+          alert(`The number ${a} is even`);
+        } else {
+          alert(`The number ${b} is odd`);
+        }
+      }
+      function checkLarger(a, b) {
+        a = prompt("Enter the first number");
+        b = prompt("Enter the Second Number");
+        a = parseInt(a);
+        b = parseInt(b);
+        if (a > b) {
+          alert(`The number ${a} is larger`);
+        } else {
+          alert(`The number ${b} is larger`);
+        }
+      }
+      function calFahrenheit(celsius) {
+        celsius = prompt("Enter the temperature in degree celsius");
+        celsius = parseInt(celsius);
+        let fahren;
+        fahren = (9 / 5) * celsius + 32;
+        alert(`${fahren}°F`);
+      }
+    </script>
+  </body>
+</html>
