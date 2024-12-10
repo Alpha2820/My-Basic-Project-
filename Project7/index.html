@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Set 3</title>
+    <style>
+      #button {
+        height: 60px;
+        width: 140px;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      #clearButton {
+        margin-top: 10px;
+        height: 60px;
+        width: 140px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button" onclick="countMe()">Click Me!!</button>
+    <p id="result"></p>
+    <button id="clearButton" onclick="clearLocalStorage()">
+      Clear Local Storage
+    </button>
+
+    <script>
+      let date = new Date();
+      let hour = date.getHours();
+      name = "Abhijeet";
+      if (hour <= 12) {
+        console.log(`Good Morning ${name}`);
+      } else if (hour > 12 && hour <= 18) {
+        console.log(`Good AfterNoon ${name}`);
+      } else if (hour > 18 && hour <= 24) {
+        console.log(`Good Night ${name}`);
+      }
+
+      let c = parseInt(localStorage.getItem("c")) || 0;
+      document.getElementById("button").innerHTML = c;
+      document.getElementById("button").style.background = "red";
+
+      function countMe() {
+        c++;
+        localStorage.setItem("c", c);
+        document.getElementById("button").innerHTML = c;
+
+        if (c % 2 == 0) {
+          document.getElementById("button").style.background = "red";
+
+          document.getElementById(
+            "result"
+          ).innerText = `The value of count is even: ${c}`;
+        } else {
+          document.getElementById("button").style.background = "green";
+
+          document.getElementById(
+            "result"
+          ).innerText = `The value of count is odd: ${c}`;
+        }
+      }
+      function clearLocalStorage() {
+        localStorage.clear();
+        c = 0;
+
+        document.getElementById("button").innerHTML = c;
+        document.getElementById("button").style.background = "red";
+        document.getElementById("result").innerText = "";
+      }
+    </script>
+  </body>
+</html>
